@@ -1,5 +1,5 @@
 import { Injectable } from "@nestjs/common"
-import { MovieSchema } from "src/infra/schemas/movieSchema"
+import { MovieSchema } from "src/infra/integrations/schemas/movieSchema"
 import { MovieRepository } from "../../repositories/movieRepository"
 
 interface GetMoviePropsSchema {
