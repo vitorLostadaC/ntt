@@ -4,4 +4,5 @@ export interface MovieSchema {
   actors: string
   poster: string
   rating: string
+  id: string
 }
