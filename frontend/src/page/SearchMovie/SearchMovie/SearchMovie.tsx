@@ -2,19 +2,19 @@ import "./SearchMovie.scss"
 
 export const SearchMovie = () => {
   return (
-    <section>
+    <section id="search-movie-component">
       <header>
         <h1>Busque seus Filmes favoritos!</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa magnam,
           laudantium non tempore nesciunt possimus culpa enim explicabo optio
-          voluptates doloremque odit quis vel id dolor. Qui hic saepe molestias?
+          voluptates doloremque odit quis vel id dolor.
         </p>
       </header>
       <form>
-        <input type="text" />
-        <button>Search</button>
-        <button>reset</button>
+        <input className="primary-input" type="text" />
+        <button className="primary-button">Search</button>
+        <button className="secondary-button">reset</button>
       </form>
     </section>
   )

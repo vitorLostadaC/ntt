@@ -4,7 +4,7 @@ import "./SearchMoviePage.scss"
 
 export const SearchMoviePage = () => {
   return (
-    <div>
+    <div id="search-movie-page">
       <SearchMovie />
       <MovieView />
     </div>
