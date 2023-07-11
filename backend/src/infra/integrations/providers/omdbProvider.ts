@@ -17,11 +17,7 @@ export class OmbdProvider implements MovieRepository {
   }
 
   public async findByTitle(title: string): Promise<MovieSchema> {
-    const movie = await this.api.post<MovieSchema>(
-      "",
-      {},
-      { params: { t: title } }
-    )
+    const movie = await this.api.get<MovieSchema>("", { params: { t: title } })
 
     return movie.data
   }
