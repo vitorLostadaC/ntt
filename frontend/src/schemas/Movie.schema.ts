@@ -3,4 +3,5 @@ export interface MovieSchema {
   description: string
   actors: string
   poster: string
+  rating: string
 }

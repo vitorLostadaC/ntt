@@ -16,9 +16,10 @@ export const SearchMoviePage = () => {
   const debounceMovieValue = useDebounce(searchValue)
 
   const movieQuery = useQuery({
-    queryKey: FIND_MOVIE_BY_TITLE,
+    queryKey: [FIND_MOVIE_BY_TITLE, debounceMovieValue],
     queryFn: () => findMovieByTitle({ title: debounceMovieValue }),
-    retry: false
+    retry: false,
+    staleTime: 60 * 60 * 24 // 24 horas
   })
 
   useEffect(() => {
