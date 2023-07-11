@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
-import { MovieView } from "./MovieView/MovieView"
-import { SearchMovie } from "./SearchMovie/SearchMovie"
+import { SearchMovie } from "./components/SearchMovie/SearchMovie"
 import "./SearchMoviePage.scss"
 import { MovieSchema } from "../../schemas/Movie.schema"
 import { useDebounce } from "../../hooks/useDebounce"
@@ -9,6 +8,7 @@ import {
   FIND_MOVIE_BY_TITLE,
   findMovieByTitle
 } from "../../services/MoviesService/MovieServiceService"
+import { MovieView } from "./components/MovieView/MovieView"
 
 export const SearchMoviePage = () => {
   const [currentMovie, setCurrentMovie] = useState<MovieSchema>()
