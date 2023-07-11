@@ -9,6 +9,7 @@ import {
   findMovieByTitle
 } from "../../services/MoviesService/MovieServiceService"
 import { MovieView } from "./components/MovieView/MovieView"
+import { mapperToRemoveNaValues } from "./utils/mapperToRemoveNaValues"
 
 export const SearchMoviePage = () => {
   const [currentMovie, setCurrentMovie] = useState<MovieSchema>()
@@ -30,7 +31,9 @@ export const SearchMoviePage = () => {
   return (
     <div id="search-movie-page">
       <SearchMovie searchValue={searchValue} setSearchValue={setSearchValue} />
-      {currentMovie && <MovieView movie={currentMovie} />}
+      {currentMovie && (
+        <MovieView movie={mapperToRemoveNaValues(currentMovie)} />
+      )}
     </div>
   )
 }
