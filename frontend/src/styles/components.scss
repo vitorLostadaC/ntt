@@ -1,5 +1,7 @@
+@import "./variables.scss";
+
 .primary-button,
-.secondary-button {
+.primary-button-outline {
   all: inherit;
   padding: 8px 40px;
   border: none;
@@ -10,7 +12,7 @@
 }
 
 .primary-button {
-  background-color: #0804e4;
+  background-color: $primary-color;
   color: white;
 
   &:hover {
@@ -18,13 +20,13 @@
   }
 }
 
-.secondary-button {
-  border: 1px solid #0804e4;
-  background-color: whitesmoke;
-  color: #0804e4;
+.primary-button-outline {
+  border: 1px solid $primary-color;
+  background-color: white;
+  color: $primary-color;
 
   &:hover {
-    background-color: #0804e4;
+    background-color: $primary-color;
     color: white;
   }
 }
@@ -35,6 +37,6 @@
   border-radius: 4px;
   padding: 5px 10px;
   &:focus {
-    border: 2px solid #0804e4;
+    border: 2px solid $primary-color;
   }
 }

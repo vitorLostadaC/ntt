@@ -14,7 +14,7 @@ export const SearchMovie = () => {
       <form>
         <input className="primary-input" type="text" />
         <button className="primary-button">Search</button>
-        <button className="secondary-button">reset</button>
+        <button className="primary-button-outline">reset</button>
       </form>
     </section>
   )
