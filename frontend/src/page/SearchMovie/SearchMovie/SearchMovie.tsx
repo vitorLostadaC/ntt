@@ -1,10 +1,19 @@
 import "./SearchMovie.scss"
 import { SearchMovieSchema } from "./SearchMovie.schema"
+import React from "react"
 
 export const SearchMovie = ({
   searchValue,
   setSearchValue
 }: SearchMovieSchema) => {
+  const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(e.target.value)
+  }
+
+  const handleResetInput = () => {
+    setSearchValue("")
+  }
+
   return (
     <section id="search-movie-component">
       <header>
@@ -20,9 +29,15 @@ export const SearchMovie = ({
           className="primary-input"
           type="text"
           value={searchValue}
-          onChange={(e) => setSearchValue(e.target.value)}
+          onChange={handleChangeInput}
         />
-        <button className="primary-button-outline">reset</button>
+        <button
+          className="primary-button-outline"
+          type="reset"
+          onClick={handleResetInput}
+        >
+          reset
+        </button>
       </form>
     </section>
   )
