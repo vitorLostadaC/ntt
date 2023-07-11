@@ -4,10 +4,12 @@ import React from "react"
 
 export const SearchMovie = ({
   searchValue,
-  setSearchValue
+  setSearchValue,
+  setIsTyping
 }: SearchMovieSchema) => {
   const handleChangeInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(e.target.value)
+    setIsTyping(true)
   }
 
   const handleResetInput = () => {

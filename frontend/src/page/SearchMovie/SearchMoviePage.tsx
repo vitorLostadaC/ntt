@@ -14,6 +14,7 @@ import { mapperToRemoveNaValues } from "./utils/mapperToRemoveNaValues"
 export const SearchMoviePage = () => {
   const [currentMovie, setCurrentMovie] = useState<MovieSchema>()
   const [searchValue, setSearchValue] = useState<string>("")
+  const [isTyping, setIsTyping] = useState(false)
   const debounceMovieValue = useDebounce(searchValue)
 
   const movieQuery = useQuery({
@@ -28,15 +29,25 @@ export const SearchMoviePage = () => {
     if (movieQuery.data) setCurrentMovie(movieQuery.data)
   }, [movieQuery.data])
 
+  useEffect(() => {
+    setIsTyping(false)
+    if (debounceMovieValue === "") setCurrentMovie(undefined)
+  }, [debounceMovieValue])
+
   return (
     <div id="search-movie-page">
-      <SearchMovie searchValue={searchValue} setSearchValue={setSearchValue} />
-      {currentMovie && (
-        <MovieView
-          movie={mapperToRemoveNaValues(currentMovie)}
-          isLoading={movieQuery.isLoading}
-        />
-      )}
+      <SearchMovie
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+        setIsTyping={setIsTyping}
+      />
+      <MovieView
+        movie={
+          currentMovie ? mapperToRemoveNaValues(currentMovie) : currentMovie
+        }
+        searchValue={searchValue}
+        isLoading={isTyping || movieQuery.isLoading}
+      />
     </div>
   )
 }
