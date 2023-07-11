@@ -1,3 +1,8 @@
+import { SearchMoviePage } from "./page/SearchMovie/SearchMoviePage"
 export default function App() {
-  return <main></main>
+  return (
+    <main>
+      <SearchMoviePage />
+    </main>
+  )
 }
