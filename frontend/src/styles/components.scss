@@ -1,0 +1,40 @@
+.primary-button,
+.secondary-button {
+  all: inherit;
+  padding: 8px 40px;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.primary-button {
+  background-color: #0804e4;
+  color: white;
+
+  &:hover {
+    filter: brightness(0.5);
+  }
+}
+
+.secondary-button {
+  border: 1px solid #0804e4;
+  background-color: whitesmoke;
+  color: #0804e4;
+
+  &:hover {
+    background-color: #0804e4;
+    color: white;
+  }
+}
+
+.primary-input {
+  all: inherit;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 5px 10px;
+  &:focus {
+    border: 2px solid #0804e4;
+  }
+}
