@@ -1,7 +1,7 @@
 import axios, { AxiosInstance } from "axios"
 import { MovieSchema } from "../schemas/movieSchema"
-import { MovieRepository } from "src/modules/movie/useCases/repositories/movieRepository"
 import { Injectable } from "@nestjs/common"
+import { MovieRepository } from "src/modules/movie/repositories/movieRepository"
 
 @Injectable()
 export class OmbdProvider implements MovieRepository {
