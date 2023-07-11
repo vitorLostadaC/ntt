@@ -1,7 +1,9 @@
+import "./MovieView.scss"
+
 export const MovieView = () => {
   return (
-    <section>
-      <div>
+    <section id="movie-view-component">
+      <div className="information">
         <h1>Movie Title</h1>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed
@@ -12,7 +14,7 @@ export const MovieView = () => {
           praesentium nihil atque ipsum ea. Enim maxime ullam rerum cumque optio
           excepturi vero fugiat recusandae?
         </p>
-        <div>
+        <div className="criticize">
           <p>
             <span>Actor:</span> Lorem ipsum
           </p>
@@ -20,10 +22,13 @@ export const MovieView = () => {
             <span>Review:</span> Estrelas...
           </p>
         </div>
-        <button>Favorite (icon...)</button>
+        <button className="primary-button">Favorite (icon...)</button>
       </div>
       <div>
-        <img src="" alt="Poster" />
+        <img
+          src="https://m.media-amazon.com/images/M/MV5BMjVhMTIzMzItZGU2MS00YWZhLWE5ZjktMjIyZWUyOTZkY2RkXkEyXkFqcGdeQXVyNjg2NjQxOTQ@._V1_SX300.jpg"
+          alt="Poster"
+        />
       </div>
     </section>
   )
