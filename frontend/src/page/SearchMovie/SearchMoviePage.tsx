@@ -32,7 +32,10 @@ export const SearchMoviePage = () => {
     <div id="search-movie-page">
       <SearchMovie searchValue={searchValue} setSearchValue={setSearchValue} />
       {currentMovie && (
-        <MovieView movie={mapperToRemoveNaValues(currentMovie)} />
+        <MovieView
+          movie={mapperToRemoveNaValues(currentMovie)}
+          isLoading={movieQuery.isLoading}
+        />
       )}
     </div>
   )

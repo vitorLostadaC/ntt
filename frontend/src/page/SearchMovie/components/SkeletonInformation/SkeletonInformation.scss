@@ -1,0 +1,48 @@
+#skeleton-information-movie {
+  display: flex;
+  justify-content: space-between;
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    & > * {
+      height: 40px;
+      width: 400px;
+
+      background: #eee;
+      background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+      border-radius: 5px;
+      background-size: 200% 100%;
+      animation: 1.5s shine linear infinite;
+    }
+
+    :nth-child(1),
+    :nth-child(3),
+    :nth-child(4) {
+      width: 200px;
+    }
+
+    :nth-child(2) {
+      width: 500px;
+      height: 100px;
+    }
+  }
+
+  .right {
+    width: 300px;
+    height: 500px;
+    background: #eee;
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
+  }
+}
+
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}

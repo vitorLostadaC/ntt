@@ -2,8 +2,9 @@ import { useState } from "react"
 import { MovieViewSchema } from "./MovieView.schema"
 import "./MovieView.scss"
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
+import { SkeletonInformation } from "../SkeletonInformation/SkeletonInformation"
 
-export const MovieView = ({ movie }: MovieViewSchema) => {
+export const MovieView = ({ movie, isLoading }: MovieViewSchema) => {
   const [favorites, setFavorites] = useState<string[]>([])
   const currentMovieIsFavorite = !!favorites.find(
     (favoriteMovieId) => favoriteMovieId === movie.id
@@ -19,9 +20,11 @@ export const MovieView = ({ movie }: MovieViewSchema) => {
     }
   }
 
+  if (isLoading) return <SkeletonInformation />
+
   return (
-    <section id="movie-view-component">
-      {!movie.id ? (
+    <section id="movie-view-component" className={isLoading ? "loading" : ""}>
+      {!movie.id && !isLoading ? (
         <h1 className="movie-not-found">Filme nao encontado :(</h1>
       ) : (
         <>
