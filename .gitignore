@@ -16,6 +16,7 @@
 # production
 **/build
 **/dist
+**/dist-ssr
 
 # misc
 **/.DS_Store
@@ -52,3 +53,4 @@
 **/!.vscode/tasks.json
 **/!.vscode/launch.json
 **/!.vscode/extensions.json
+
