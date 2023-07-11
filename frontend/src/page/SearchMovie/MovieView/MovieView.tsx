@@ -1,7 +1,8 @@
+import { MovieViewSchema } from "./MovieView.schema"
 import "./MovieView.scss"
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
 
-export const MovieView = () => {
+export const MovieView = ({ movie }: MovieViewSchema) => {
   return (
     <section id="movie-view-component">
       <div className="information">

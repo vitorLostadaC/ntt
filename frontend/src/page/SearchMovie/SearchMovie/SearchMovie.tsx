@@ -1,6 +1,10 @@
 import "./SearchMovie.scss"
+import { SearchMovieSchema } from "./SearchMovie.schema"
 
-export const SearchMovie = () => {
+export const SearchMovie = ({
+  searchValue,
+  setSearchValue
+}: SearchMovieSchema) => {
   return (
     <section id="search-movie-component">
       <header>
@@ -12,8 +16,12 @@ export const SearchMovie = () => {
         </p>
       </header>
       <form>
-        <input className="primary-input" type="text" />
-        <button className="primary-button">Search</button>
+        <input
+          className="primary-input"
+          type="text"
+          value={searchValue}
+          onChange={(e) => setSearchValue(e.target.value)}
+        />
         <button className="primary-button-outline">reset</button>
       </form>
     </section>
