@@ -13,7 +13,7 @@ export const MovieView = ({ movie }: MovieViewSchema) => {
             <span>Actor:</span> {movie.actors}
           </p>
           <p>
-            <span>Review:</span> Estrelas... {movie.rating}
+            <span>Review:</span> {movie.rating}
           </p>
         </div>
         <button className="secundary-button">

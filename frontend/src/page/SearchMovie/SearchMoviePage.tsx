@@ -18,6 +18,7 @@ export const SearchMoviePage = () => {
   const movieQuery = useQuery({
     queryKey: [FIND_MOVIE_BY_TITLE, debounceMovieValue],
     queryFn: () => findMovieByTitle({ title: debounceMovieValue }),
+    enabled: debounceMovieValue !== "",
     retry: false,
     staleTime: 60 * 60 * 24 // 24 horas
   })
