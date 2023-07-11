@@ -4,6 +4,11 @@
   justify-content: space-between;
   gap: 1rem;
 
+  .movie-not-found {
+    text-align: center;
+    margin: 5rem auto;
+  }
+
   .information {
     display: flex;
     flex-direction: column;

@@ -21,29 +21,35 @@ export const MovieView = ({ movie }: MovieViewSchema) => {
 
   return (
     <section id="movie-view-component">
-      <div className="information">
-        <h1>{movie.title}</h1>
-        <p>{movie.description}</p>
-        <div className="criticize">
-          <p>
-            <span>Actor:</span> {movie.actors}
-          </p>
-          <p>
-            <span>Review:</span> {movie.rating}
-          </p>
-        </div>
-        <button className="secundary-button" onClick={handleChangeFavorite}>
-          Favorite
-          {currentMovieIsFavorite ? (
-            <AiFillHeart className="icon" />
-          ) : (
-            <AiOutlineHeart />
-          )}
-        </button>
-      </div>
-      <div>
-        <img src={movie.poster} alt="Poster" />
-      </div>
+      {!movie.id ? (
+        <h1 className="movie-not-found">Filme nao encontado :(</h1>
+      ) : (
+        <>
+          <div className="information">
+            <h1>{movie.title}</h1>
+            <p>{movie.description}</p>
+            <div className="criticize">
+              <p>
+                <span>Actor:</span> {movie.actors}
+              </p>
+              <p>
+                <span>Review:</span> {movie.rating}
+              </p>
+            </div>
+            <button className="secundary-button" onClick={handleChangeFavorite}>
+              Favorite
+              {currentMovieIsFavorite ? (
+                <AiFillHeart className="icon" />
+              ) : (
+                <AiOutlineHeart />
+              )}
+            </button>
+          </div>
+          <div>
+            <img src={movie.poster} alt="Poster" />
+          </div>
+        </>
+      )}
     </section>
   )
 }
