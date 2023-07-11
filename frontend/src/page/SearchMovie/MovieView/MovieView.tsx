@@ -1,4 +1,5 @@
 import "./MovieView.scss"
+import { AiOutlineHeart, AiFillHeart } from "react-icons/ai"
 
 export const MovieView = () => {
   return (
@@ -22,7 +23,9 @@ export const MovieView = () => {
             <span>Review:</span> Estrelas...
           </p>
         </div>
-        <button className="primary-button">Favorite (icon...)</button>
+        <button className="secundary-button">
+          Favorite <AiFillHeart className="icon" />
+        </button>
       </div>
       <div>
         <img
